@@ -3,7 +3,7 @@ import errno, json, os, requests, urllib.request
 from bs4 import BeautifulSoup
 
 baseurl = "http://danbooru.donmai.us/posts/"
-f = open('./data.json')
+f = open('./data/data.json')
 items = json.load(f)
 file_names = [item["file_name"] for item in items]
 
