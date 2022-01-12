@@ -4,6 +4,7 @@ require 'rake'
 require 'mechanize'
 require 'nokogiri'
 require 'fileutils'
+require 'json'
 require File.dirname(__FILE__) + "/rake/lib.rb"
 
 class DownloadDataTasks < FileProcessingTasks
