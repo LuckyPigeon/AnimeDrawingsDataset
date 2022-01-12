@@ -1,9 +1,14 @@
-import errno, json, os, requests, urllib.request
+import argparse, errno, json, os, requests, urllib.request
 
 from bs4 import BeautifulSoup
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--image_path", nargs="?", const="./data/data.json", type=str, help="Specified image path.")
+parser.parse_args()
+args = parser.parse_args()
+
 baseurl = "http://danbooru.donmai.us/posts/"
-f = open('./data/data.json')
+f = open(args.image_path)
 items = json.load(f)
 file_names = [item["file_name"] for item in items]
 
